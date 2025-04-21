@@ -1,0 +1,538 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-image: url('../images/rice.jpg'); /* Specify your background image path */
+    background-size: cover; /* Make sure the image covers the whole page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    background-attachment: fixed; /* Keep the background image fixed while scrolling */
+    position: relative;
+}
+
+/* Background overlay for opacity effect */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white overlay to reduce opacity */
+    z-index: -1; /* Make sure the overlay stays behind the content */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background: #283747;
+    padding: 20px;
+}
+
+.logo h1 {
+    color: #fff;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f7ca18;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('../images/rice.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll;
+        height: 60vh; /* Adjust height for smaller screens */
+    }
+    .hero-section h2 {
+        font-size: 2.5rem; /* Resize font */
+    }
+}
+
+.hero-section h2 {
+    font-size: 4rem;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.hero-section .btn {
+    padding: 10px 20px;
+    background: #f7ca18;
+    color: #333;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-section .btn:hover {
+    background: #e5b200; 
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-section {
+    background-color: #ecf0f1;
+    padding: 100px 0;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Achievements Section */
+.achievements-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.achievements-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #333;
+}
+
+.achievements-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.achievement {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    min-width: 280px;
+}
+
+.achievement h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #5a5a5a;
+}
+
+.achievement p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+    .achievements-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .achievement {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Research Section */
+
+.research-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.research-section h2 {
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.research-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.research-item:hover {
+    transform: translateY(-10px);
+}
+
+.research-item h3 {
+    font-size: 1.8rem;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.research-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Team Section */
+
+.team-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.team-section h2,
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.team-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member h4 {
+    font-size: 1.5rem;
+    margin: 15px 0 5px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Alumni Section */
+.alumni-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.alumni-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.alumni-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.alumni-member:hover {
+    transform: translateY(-10px);
+}
+
+.alumni-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.alumni-member h4 {
+    font-size: 1.5rem;
+    margin: 15px 0 5px;
+}
+
+.alumni-member p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Publications Section */
+.publications-section {
+    padding: 50px 0;
+}
+
+.publications-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.publication {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.publication h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #5a5a5a;
+}
+
+.publication p {
+    font-size: 16px;
+    color: #666;
+}
+
+.publication .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #f4a100;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .publications-list {
+        flex-direction: column;
+    }
+
+    .publication {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 4 / 3; /* Set a consistent aspect ratio (e.g., 4:3) */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .gallery-item {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+}
+
+/* Contact Section */
+.contact-section, .technical-queries-section {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    margin: 2rem auto;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info, .technical-info {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-info p, .technical-info p {
+    margin: 0.5rem 0;
+}
+
+.contact-info address, .technical-info address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.contact-info a, .technical-info a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.contact-info a:hover, .technical-info a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .nav-links li {
+        margin-left: 10px;
+    }
+
+    .hero-section h2 {
+        font-size: 3rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .contact-section form input,
+    .contact-section form textarea {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background: #283747;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
