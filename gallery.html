@@ -7,6 +7,44 @@
     <title>Crop Improvement Lab - Gallery</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Minimal modal styling compatible with existing styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #caption {
+            text-align: center;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 
@@ -32,48 +70,56 @@
     <!-- Gallery Section -->
     <section id="gallery" class="section gallery-section">
         <div class="container">
-            <h2>Lab Moments and Gallery</h2>
+            <h2>Lab Gallery</h2>
             <p class="section-description">Explore the cherished moments from our research lab's journey, from experiments to conferences and fieldwork.</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/lab-photo1.jpg" alt="Lab Research">
-                    <div class="caption">Field Research in Progress</div>
+                    <img src="images/DSC_0129.jpg" alt="Preethi's Farewell" onclick="openModal(this)">
+                    <div class="caption">Preethi's Farewell</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/lab-photo2.jpg" alt="Conference">
-                    <div class="caption">Presenting at International Conference</div>
+                    <img src="images/lab-photo1.jpg" alt="" onclick="openModal(this)">
+                    <div class="caption">F1 Hybrid Seeds</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/lab-photo3.jpg" alt="Field">
+                    <img src="images/lab-photo3.jpg" alt="Field" onclick="openModal(this)">
                     <div class="caption">Field</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/lab-photo5.jpg" alt="">
+                    <img src="images/lab-photo5.jpg" alt="New Year 2025" onclick="openModal(this)">
                     <div class="caption">New Year 2025</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/openday2024.jpg" alt="">
+                    <img src="images/openday2024.jpg" alt="CCMB Open Day 2024" onclick="openModal(this)">
                     <div class="caption">CCMB Open Day 2024</div>
                 </div>
-                 <div class="gallery-item">
-                    <img src="images/lab-photo4.jpg" alt="">
+                <div class="gallery-item">
+                    <img src="images/lab-photo4.jpg" alt="Sample Collection" onclick="openModal(this)">
                     <div class="caption">Sample Collection</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/lab-photo6.jpg" alt="">
-                    <div class="caption">Research</div>
-                </div><div class="gallery-item">
-                    <img src="images/lab-photo7.jpg" alt="">
-                    <div class="caption">Research</div>
-                </div><div class="gallery-item">
-                    <img src="images/lab-photo9.jpg" alt="">
+                    <img src="images/DSC_0039.jpg" alt="Bhongir Field" onclick="openModal(this)">
+                    <div class="caption">Bhongir Field</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/DSC_0081.jpg" alt="Bhongir Field" onclick="openModal(this)">
+                    <div class="caption">Bhongir Field</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/lab-photo9.jpg" alt="IIRR-Field" onclick="openModal(this)">
                     <div class="caption">IIRR-Field</div>
                 </div>
-                <!-- Add more gallery items as needed -->
             </div>
         </div>
     </section>
+
+    <!-- Modal Section -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -82,6 +128,17 @@
         </div>
     </footer>
 
+    <!-- Modal Script -->
+    <script>
+        function openModal(img) {
+            document.getElementById("imageModal").style.display = "block";
+            document.getElementById("modalImg").src = img.src;
+            document.getElementById("caption").innerText = img.alt;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
-
